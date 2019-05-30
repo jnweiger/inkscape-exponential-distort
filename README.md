@@ -7,7 +7,10 @@ create the illusion of a curved surface.
 Points move left, if you choose an exponent > 1, and right if the exponent is < 1.
 An exponent of 1.0 does exactly nothing.
 
-This can be used in combination with the bend path effect to create a cone projection
-that retains aspect ratio.
+
 
 <img src="https://raw.githubusercontent.com/jnweiger/inkscape-exponential-x/master/exponential-x-demo.png"/>
+
+
+This can be used in combination with the bend path effect to create a cone projection
+that retains aspect ratio.
