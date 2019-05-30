@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Exponential-X</_name>
+  <id>com.github.jnweiger.inkscape.exponential.x</id>
+  <dependency type="executable" location="extensions">exponential-x.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="settings_what" type="description" xml:space="preserve">This exponential-x extension distorts objects along the x-axis. The bounding box remains unchanged. Inner points move leftwards when the exponent is &gt; 1 and rightwards when it is &lt; 1. This can be used to create a logarithmic scale.</param>
+    <param name="exponent" type="float" min="0.01" max="100" gui-text="Exponent:  ">1.33</param>
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="Modify Path"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">exponential-x.py</command>
+  </script>
+</inkscape-extension>
+
