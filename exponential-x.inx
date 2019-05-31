@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>Exponential-X</_name>
-  <id>com.github.jnweiger.inkscape.exponential.x</id>
+  <_name>Exponential X-Axis</_name>
+  <id>com.github.jnweiger.inkscape.exponential.x.axis</id>
   <dependency type="executable" location="extensions">exponential-x.py</dependency>
   <dependency type="executable" location="extensions">inkex.py</dependency>
-    <param name="settings_what" type="description" xml:space="preserve">This exponential-x extension distorts objects along the x-axis. The bounding box remains unchanged. Inner points move leftwards when the exponent is &gt; 1 and rightwards when it is &lt; 1. This can be used to create a logarithmic scale.</param>
+    <param name="settings_what" type="description" xml:space="preserve">This exponential-x-axis extension distorts objects along the x-axis. The bounding box remains unchanged. Inner points move leftwards when the exponent is &gt; 1 and rightwards when it is &lt; 1. This can be used to create a logarithmic scale.</param>
     <param name="exponent" type="float" min="0.01" max="100" gui-text="Exponent:  ">1.33</param>
+    <param name="padding" type="float" min="0" max="500" gui-text="Padding [%]:  ">0</param>
+    <param name="padding_what" type="description" xml:space="preserve">Apply padding to soften the effect. Without padding the exponential curve runs from 0 to 1. With e.g. 100% padding it runs from 0.5 to 1.</param>
   <effect>
     <object-type>all</object-type>
     <effects-menu>
