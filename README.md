@@ -17,3 +17,6 @@ This can be used in combination with the bend path effect to create a cone proje
 that retains aspect ratio.
 
 Caution: Finding correct parameters for e.g. a cone projection is left as an exercise to the user. 
+
+
+<img src="https://raw.githubusercontent.com/jnweiger/inkscape-exponential-x-axis/master/hello_world_ring.png"/>
