@@ -11,9 +11,9 @@ sys.path.append('/usr/share/inkscape/extensions')
 inkex.localize()
 
 
-class TransformExponentialX(inkex.Effect):
+class TransformExponential(inkex.Effect):
     """
-    Apply logarithmic or exponential scale on all x-coordinates.
+    Apply logarithmic or exponential scale on all x( and/or y)-coordinates.
     """
 
     def __init__(self):
@@ -23,6 +23,9 @@ class TransformExponentialX(inkex.Effect):
 
         inkex.Effect.__init__(self)
 
+        self.OptionParser.add_option(
+            '-a', '--axis', action='store', type='string', dest='axis', default='x',
+            help='distortion axis. Valid values are "x", "y", or "xy". Default is "x"')
         self.OptionParser.add_option(
             '-x', '--exponent', action='store', type='float', dest='exponent', default=float(1.3),
             help='distortion factor. 1=no distortion, default 1.3')
@@ -92,12 +95,12 @@ class TransformExponentialX(inkex.Effect):
             for ppp in pp:
               if xmin is None: xmin = ppp[0]
               if xmax is None: xmax = ppp[0]
-              if ymin is None: xyin = ppp[1]
+              if ymin is None: ymin = ppp[1]
               if ymax is None: ymax = ppp[1]
 
               if xmin > ppp[0]: xmin = ppp[0]
               if xmax < ppp[0]: xmax = ppp[0]
-              if ymin > ppp[1]: xyin = ppp[1]
+              if ymin > ppp[1]: ymin = ppp[1]
               if ymax < ppp[1]: ymax = ppp[1]
         return (xmin, xmax, ymin, ymax)
 
@@ -106,7 +109,7 @@ class TransformExponentialX(inkex.Effect):
 
         if len(self.selected) == 0:
             inkex.errormsg(_("Please select an object to perform the " +
-                             "exponential-x transformation on."))
+                             "exponential-distort transformation on."))
             return
 
         for id, node in self.selected.items():
@@ -127,6 +130,6 @@ class TransformExponentialX(inkex.Effect):
 
 
 if __name__ == '__main__':   #pragma: no cover
-        e = TransformExponentialX()
+        e = TransformExponential()
         e.affect()
 
